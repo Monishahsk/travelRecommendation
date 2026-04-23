@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelBloom</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{margin:0;font-family:Arial;background:#fff;}
+
+.navbar{
+display:flex;justify-content:space-between;align-items:center;
+background:#0b3d4d;padding:15px 30px;color:white;
+}
+
+.logo-section{display:flex;align-items:center;gap:10px;}
+.logo-section img{width:45px;height:45px;}
+
+.nav-links a{color:white;text-decoration:none;margin:0 15px;cursor:pointer;}
+
+.search-section input{padding:8px 15px;border-radius:20px;border:none;width:250px;}
+.search-section button{padding:8px 15px;border-radius:20px;border:none;margin-left:5px;cursor:pointer;}
+
+.social-icons{
+position:fixed;top:200px;left:25px;
+display:flex;flex-direction:column;gap:25px;
+font-size:22px;color:white;z-index:1000;
+}
+
+.hero{
+background:url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df") center/cover;
+height:90vh;position:relative;color:white;
+}
+
+.hero-content{
+position:absolute;top:180px;left:120px;max-width:600px;
+}
+
+.hero-content h1{font-size:60px;margin:0;}
+.book-btn{margin-top:20px;padding:10px 25px;border:none;background:#0b3d4d;color:white;}
+
+#results{
+display:grid;
+grid-template-columns: repeat(2, 300px);
+gap:30px;
+position:absolute;
+bottom:30px;
+left:120px;
+}
+
+.card{background:white;color:black;width:300px;border-radius:8px;padding:10px;text-align:center;}
+.card img{width:100%;border-radius:8px;}
+.card h3{color:blue;}
+
+.page{
+display:none;
+background:url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df") center/cover;
+height:90vh;color:white;padding:80px 120px;
+}
+
+.team{display:flex;gap:60px;margin-top:40px;}
+.team div{text-align:center;}
+
+form{max-width:400px;margin-top:40px;}
+form input, form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+background:transparent;
+border:2px solid white;
+border-radius:5px;
+color:white;
+}
+form input, form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+background:transparent;
+border:2px solid white;
+border-radius:5px;
+color:white;
+}
+
+form input::placeholder,
+form textarea::placeholder{
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SOCIAL ICONS (ALL PAGES) -->
+<div class="social-icons">
+<i class="fab fa-twitter" title="Twitter"></i>
+<i class="fab fa-facebook-f" title="Facebook"></i>
+<i class="fab fa-instagram" title="Instagram"></i>
+<i class="fab fa-youtube" title="YouTube"></i>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+<div class="logo-section">
+<img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="TravelBloom Logo">
+<h2>TravelBloom</h2>
+</div>
+
+<div class="nav-links">
+<a onclick="showHome()">Home</a>
+<a onclick="showAbout()">About Us</a>
+<a onclick="showContact()">Contact Us</a>
+</div>
+
+<div class="search-section" id="searchBar">
+<input type="text" id="searchInput" placeholder="Enter a destination or keyword">
+<button onclick="searchPlaces()">Search</button>
+<button onclick="clearResults()">Clear</button>
+</div>
+</div>
+
+<!-- HOME PAGE -->
+<div class="hero" id="homePage">
+<div class="hero-content">
+<h1>EXPLORE DREAM<br>DESTINATION</h1>
+<p>
+Our Travel Recommendation App makes exploring the world effortless.
+With personalized suggestions, smart itineraries, and real-time insights,
+it helps you discover destinations that match your style, budget, and interests.
+</p>
+<button class="book-btn">Book Now</button>
+</div>
+<div id="results"></div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="aboutPage">
+<h1>ABOUT US</h1>
+<p>
+Welcome to TravelBloom, your trusted companion for discovering the world’s most captivating destinations with ease and confidence. We help travelers explore stunning beaches, historic temples, and remarkable countries through curated recommendations, vivid images, and helpful insights. Our goal is to make trip planning simple, inspiring, and personalized for every kind of explorer everywhere.Whether you are seeking relaxation by the sea, cultural exploration through ancient architecture, or adventures across diverse landscapes, TravelBloom guides you every step of the way. We aim to inspire exploration, simplify trip planning, and connect people with destinations that perfectly match their interests, budget, and travel aspirations worldwide, every single day.
+</p>
+
+<h1><b>Our Team</b></h1>
+<div class="team">
+<div>
+<h3>John Doe</h3>
+<button class="role ceo">CEO</button>
+</div>
+<div>
+<h3>Celina Thomas</h3>
+<button class="role lead">Team Lead</button>
+</div>
+<div>
+<h3>Mike Tyson</h3>
+<button class="role delivery">Delivery Head</button>
+</div>
+</div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="contactPage">
+<h1>CONTACT US</h1>
+<form>
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Message" required></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+
+<script src="travel_recommendation.js"></script>
+</body>
+</html>
